@@ -11,4 +11,6 @@ add_executable(listaC ex1_listaUdemy.c
         imc.c
         exrandom.c
         hexcolor.c
-        password.c)
+        password.c
+        fasedavida.c
+        temperature.c)
