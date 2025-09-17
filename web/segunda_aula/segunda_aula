@@ -1,0 +1,20 @@
+
+continuando o conteúdo de tags
+
+<font> é referente à fontes diversas, com size como opção e máximo sendo 7
+
+listas ordenadas <ol> </ol> ordened list
+listas não ordenadas <ul> </ul> un ordened list
+lista de definição <dt> </dt> - Basicamente uma lista onde o texto (dd) fica com um tab para dentro
+
+itens da lista <li> </li> list item
+itens da lista de definição <dd> </dd>
+
+<ol type="a"; type="A"; type="i"; type="I"> essas são as opções de types
+
+<ul type="disc"; type="circle"; type="square"> essas são as opções de types para ul
+default é disc (círculo preenchido) e circle é circulo vazado
+
+frameset serve para dividir o html em outros htmls, mas atualmente está ultrapassado
+
+

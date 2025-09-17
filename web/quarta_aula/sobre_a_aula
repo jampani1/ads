@@ -1,0 +1,7 @@
+Diferença entre action e method em formulários
+  method pode ser GET ou POST
+    GET envia pela URL
+    POST envia pela memória (mais seguro)
+
+  action é responsável por enviar para um script que processará a requisição - exemplo: grava_senha.php
+  

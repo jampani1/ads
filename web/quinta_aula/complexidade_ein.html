@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo div com style</title>
+</head>
+<style type="text/css">
+    body {
+        background-color: #524897;
+    }
+    #moldura {
+        background-color: #749852;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+    }
+    #topo {
+        background-color: beige;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    #conteudo-junto {
+        display: flex;
+        flex-direction: row;
+
+    }
+    #naveg {
+        background-color: #956234;
+        width: 20%;
+        min-height: 400px;
+    }
+    #conteudo {
+        background-color: #559874;
+        width: 80%;
+        min-height: 400px;
+        padding: 2%;
+    }
+    #rodape {
+        background-color: gray;
+        text-align: center;
+        color: white;
+    }
+</style>
+<body>
+    <div id="moldura">
+        <div id="topo">
+            <img src="pastelaria.jpg">
+            <h1>Pastelaria FATEC</h1>
+        </div>
+        <div id="conteudo-junto">
+        <div id="naveg">
+            <strong>Menu: </strong>
+            <ul>
+                <li>Home</li>
+                <li>Cardápio</li>
+                <li>Promoções</li>
+                <li>Contato</li>
+            </ul>
+        </div>
+        <div id="conteudo">
+            <img src="pastel.jpg">
+        </div>
+        </div>
+        <div id="rodape">
+            <p>Todos os direitos reservados</p>
+        </div>
+    </div>
+</body>
+</html>

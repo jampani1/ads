@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo formulário - INPUTS</title>
+</head>
+<body bgcolor="yellow">
+    <h1>Exemplo de formulário INPUTs</h1>
+    <form method="POST">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" size="50"> <br> <br>
+
+        <label for="senha">Senha: </label>
+        <input type="password" name="senha" id="senha" size="10"> <br> <br>
+
+        <label for="sexo">Sexo: </label>
+        <input type="radio" name="masc" id="masc"> Masculino
+        <input type="radio" name="fem" id="fem"> Feminino <br> <br>
+
+        <label for="espec">Cliente especial</label>
+        <input type="checkbox" name="espec" id="espec"> <br> <br>
+
+        <label for="nasc">Data de nascimento</label>
+        <input type="date" name="nasc" id="nasc"> <br> <br>
+
+        <label for="cor">Escolha sua cor favorita</label>
+        <input type="color" name="cor" id="cor"> <br> <br>
+
+        <label for="tel">Telefone</label>
+        <input type="tel" name="tel" id="tel" placeholder="(XXX) X XXXX-XXXX"> <br> <br>
+
+        <label for="mes_ferias">Escolha seu mês preferido</label>
+        <input type="month" name="mes_ferias" id="mes_ferias"> <br> <br>
+
+        <label for="hora">Hora da aula</label>
+        <input type="time" name="hora" id="hora"> <br> <br>
+
+        <label for="data_hora">Escolha a data e a hora (2): </label>
+        <input type="datetime" name="data_hora" id="data_hora"> <br> <br>
+
+        <label for="satisf">O quanto satisfeito você está? </label>
+        <input type="range" name="satisf" id="satisf"> <br> <br>
+
+        <label for="email">Digite seu email: </label>
+        <input type="email" name="email" id="email"> <br> <br>
+
+        <label for="site">Digite seu site: </label>
+        <input type="url" name="site" id="site" placeholder="https://www.facebook.com"> <br> <br>
+
+        <label for="amigos">Quantos amigos você tem? </label>
+        <input type="number" name="amigos" id="amigos"> <br> <br>
+
+        <label for="dia_folga">Escolha uma semana de folga: </label>
+        <input type="week" name="dia_folga" id="dia_folga"> <br> <br>
+
+        <label for="arquivo">Escolha um arquivo com sua foto: </label>
+        <input type="file" name="file" id="file"> <br> <br>
+        <input type="hidden" name="id" value="Jogue fora"> <br> <br>
+
+        <label for="oq">Buscar mais informações</label>
+        <input type="search" name="oq" id="oq" size="25" placeholder="Digite a busca aqui"> <br> <br>
+
+        <textarea name="mensagem" id="mensagem" rows="5" cols="50" placeholder="Digite sua mensagem aqui..."></textarea> <br> <br>
+
+        <hr>
+
+        <input type="submit" value="Enviar">
+        <br> <br>
+        <input type="reset" value="Limpar">
+
+    </form>
+</body>
+</html>

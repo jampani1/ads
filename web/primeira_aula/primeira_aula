@@ -1,0 +1,20 @@
+http://info.cern.ch/hypertext/WWW/TheProject.html 
+primeiro site a ir ao ar da história :)
+
+web 1.0 - HTML só interpreta, não programa nada; chat > irc (exemplo mirc); e-mail (sem regras/restrições); sem provedor (conectava-se a internet por linha telefônica em qualquer servidor - modem us robotics)
+
+web 2.0 - outras linguagens de programação para colocar lógica na página (Js, PHP, asp - antes a página era estática, agora é dinâmica); chat deu lugar à redes sociais (icq, msn, orkut); surge o e-commerce; e-mail evolui (precisa de cadastro); provedores de internet tornam-se pagos (adsl, radio)
+
+orkut > open social (consórcio que deu origem à dinâmica das bigtechs para redes sociais - compartilhamento de dados)
+
+web 3.0 - linguagens mobile (linguagens comeca a atender aparelhos móveis - responsividade); facebook/instagram/tuiter crescem (open social ajuda); e-mail passa a ser monitorado (segurança); e-commerce passou a ser via dupla (comércio <confia> cliente)
+
+web 4.0 - evolução mobile; engrandecimento das redes sociais; localização em tempo real; federação (utilização de uma conta para entrar em outra conta - você é federado); carteiras digitais (fintech); aúdio/vídeo aberto (todos estão em open social, fala-se sobre um tema e aparecem anúncios sobre)
+
+cookies - memórias para o navegador - deixa "rastro" 
+
+recomendação sobre
+Linux-Server-Administration-Craig-Library / Segurança e redes
+
+extensions
+LiveServer - para executar o .html no root

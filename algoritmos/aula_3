@@ -1,0 +1,91 @@
+20/08/25
+
+comparação entre python e C para um algoritmo simples de soma
+
+Em Python:
+#script de soma
+a = int(input("Digite A: "))
+b = int(input("Digite B: "))
+print("A soma de A + B é: ", a+b)
+
+Em C:
+#include <stdio.h>
+
+int main(void) {
+    int a, b, soma;
+    printf("Digite A: \n");
+    scanf("%d", &a);
+    printf("Digite B: \n");
+    scanf("%d", &b);
+    soma = a + b;
+    printf("O valor da soma é:  %d", soma);
+    return 0;
+}
+
+CÁLCULO DE ÁREA DE CIRCUNFERÊNCIA EM C
+#include <stdio.h>
+
+int main(void) {
+    float pi = 3.14, r, area;
+    printf("Digite o valor do raio: \n");
+    scanf("%f", &r);
+    area = pi * (r * r);
+    printf("A área é: %.2f", area);
+    return 0;
+}
+
+CÁLCULO DE MÉDIA EM C
+#include <stdio.h>
+
+int main(void) {
+    float n1, n2, n3, media;
+    printf("Digite a primeira nota: \n");
+    scanf("%f", &n1);
+    printf("Digite a segunda nota: \n");
+    scanf("%f", &n2);
+    printf("Digite a terceira nota: \n");
+    scanf("%f", &n3);
+    media = (n1 + n2 + n3) / 3;
+    printf("A media e: %.2f\n", media);
+}
+
+
+primeiras considerações:
+  em C, é necessário declarar as variáveis antes, printF e scanF (pede para digitar o valor e depois direciona onde o valor será salvo)
+  para salvar em scanf, indicamos uma máscara para o tipo de dado (no caso de integers = %d) e a indicação para a variável (&), ou seja: scanf("%d", &a);
+
+  decimal = ponto flutuante
+    em C: float e double (mais preciso, mas usa mais memória); máscaras %f para float e %lf para double (long float) - %.algumnumerof indica quantas casas decimais pós vírgula
+          int pode ser utilizado por duas máscaras: %d ou %i
+
+int - inteiros
+float / double - decimais
+char - caracteres
+void - sem return / ausência de valor
+
+para constantes - palavra reservada que indica é const
+const pi; 
+
+conceito de variável:
+    é algo que endereça na memória um valor
+    lembrar da ideia da máquina de lavar (variáveis declaradas vão "ocupando" menos espaço na memória)
+    & indica o endereçamento, por isso scanf("%d", &a), %d é o tipo e &a é onde ele está
+
+
+em c e Java a atribuição é igual, só muda para string
+em Java
+    String nome;
+em C
+    char str1[50];
+
+o valor inicial de uma variável em c é resultado de uma conta aleatória que pode ser 0 ou não (?!)
+quando um valor não é declarado (int x;) a variável recebe um valor "lixo"
+
+boa prática 
+    > uma variável sempre deve ser incializada
+    > carmelCase (nome da variável começa minusculo e a segunda palavra - se houver - é com letra maiuscula)
+    > unico simbolo indicado para variavel é _
+
+
+
+  

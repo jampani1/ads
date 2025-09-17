@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+
+<body>
+    <center>
+    <table bgcolor="gray">
+        <thead>Cadastro de pessoa jurídica</thead>
+        <tr>
+            <td ><label for="razaos">Razão Social: </label></td>
+            <td colspan="3"><input type="text" name="razaos" size="66"></td>
+        </tr>
+        <tr>
+            <td ><label for="cpnj">CNPJ: </label></td>
+            <td><input type="text" name="cnpj" size="30"></td>
+            <td ><label for="insc">Insc. Est: </label> </td>
+                <td><input type="text" name="insc"></td>
+        </tr>
+        <tr>
+            <td ><label for="resp">Responsável: </label></td>
+            <td colspan="3"><input type="text" name="resp" size="66"></td>
+        </tr>
+        <tr>
+            <td ><label for="cargo">Cargo: </label></td>
+            <td><select name="cargo">
+                <option value=" "> </option>
+                <option value="diretor">Diretor</option>
+                <option value="prop">Proprietário</option>
+                <option value="gerente">Gerente</option>
+                <option value="outro">Outro</option>
+            </select></td>
+            <td><label for="func">Nº Func: </label></td>
+                <td><input type="number" name="func"></td>
+        </tr>
+        <tr>
+            <td ><label for="depto">Departamento: </label></td>
+            <td colspan="3"><input type="text" name="depto" size="66"></td>
+        </tr>
+        <tr>
+            <td ><label for="tel">Telefone: </label></td>
+            <td colspan="3"><input type="tel" name="tel" id="tel" placeholder="(XXX) X XXXX-XXXX" size="66"></td>
+        </tr>
+        <tr>
+            <td ><label for="email">Digite seu email: </label></td>
+            <td colspan="3"><input type="email" name="email" id="email" size="66"></td>
+        </tr>
+        <tr>
+            <td ><label for="site">Digite seu site: </label></td>
+            <td colspan="3"><input type="url" name="site" id="site" placeholder="https://www.seusiteaqui.com" size="66"></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><input type="reset" value="Limpar"></td>
+            <td><input type="submit" value="Gravar"></td>
+        </tr>
+    </table>
+    </center>
+</body>
+
+</html>

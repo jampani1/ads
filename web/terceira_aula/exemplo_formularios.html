@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <form method="post" action="">
+        <h1>Exemplo de formulário</h1>
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <label>Label indica o campo: </label>
+            <input type="text" id="Nome" name="Nome" placeholder="placeholder é a tag para escrever aqui" size="50%" maxlength="50" value="Deixa uma entrada antecipada">
+
+        <br><br>
+
+            <label>Senha: </label>
+            <input type="password" id="senha" name="senha" size="50%">
+        <br> <br>
+            <label>Sexo: </label> <br> <br>
+            <input type="radio" name="sexo"> Masc    <br>
+            <input type="radio" name="sexo"> Fem     <br>
+            <input type="radio" name="sexo"> Outro   <br>
+            <input type="radio" name="sexo"> Prefiro não dizer <br>
+            <input type="radio" checked name="sexo"> Setado <br>
+        <br>
+        </fieldset>
+        <fieldset>
+        <legend>Dados escolares</legend>
+            <label>Escolha seu curso: </label>
+            <select>
+                <option>    </option>
+                <option>Gestão empresarial</option>
+                <option>Mecatrônica</option>
+                <option>Projetos mecânicos</option>
+                <option>ADS</option>
+            </select>
+        </fieldset>
+        
+        <br>
+
+        <input type="checkbox" checked disabled> Eu desejo receber SPAMs
+        <br> <br>
+        <label>Data de início do curso</label> <br>
+        <input type="date">
+        <br> <br>
+        <label>Escolha o mês das suas férias</label> <br>
+        <input type="month">
+        <br> <br>
+        <label>Horário da aula</label><br>
+        <input type="time">
+        <br> <br>
+        <label>Escolha sua cor favorita: </label> <br>
+        <input type="color"> <br> <br>
+        <label>Escolha de tanto a tanto: </label> <br>
+        <input type="range" min="0" max="100" step="20">
+
+        <hr>
+        <input type="reset" value="o escrito aqui aparece">
+        <input type="submit">
+
+    </form>
+</body>
+</html>

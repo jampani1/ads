@@ -1,0 +1,25 @@
+Para criar tabelas usa-se:
+    table para começar a estruturação
+    caption é o rótulo da tabela
+    thead é o cabeçalho da tabela
+    tbody indica o conteúdo da tabela
+    tr é a linha do cabeçalho ou linha da tabela
+    th são as células ou colunas do cabeçalho
+    td são as células ou linhas da tabela
+
+    TR É LINHA
+    TD É COLUNA
+
+  rowspan mescla linha
+  colspan mescla coluna
+  Dar uma olhada melhor em exercicio.html para entender a distribuição
+
+  colgroup - agrupamento de coluna
+
+  tag form permite criar e enviar formulários
+  value e placeholder não são utilizados juntos em input="text"
+  method get manda pela barra de endereço
+  method post envia pelo corpo da requisição ou pela memória, mas precisa de action
+    action indica onde será recebido o formulário
+
+  fieldset + legend agrupa secoes do formulario

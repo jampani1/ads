@@ -1,0 +1,5 @@
+algumas considerações iniciais sobre CSS
+
+  inline > no componente deve adicionar style=""
+  incorporado > antes de <head> deve adicionar <style typ-tudojunto-e="text/css"></style>
+  externo > adicionar dentro de <head> <link rel="stylesheet" typ-tudojunto-e="text/css" href="local/do/arquivo">

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario com agrupamentos</title>
+</head>
+
+<body bgcolor="orange">
+    <h1 align="center">Formulário com agrupamentos</h1>
+    <form method="POST">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" size="50"> <br> <br>
+            <label for="nome">Senha: </label>
+            <input type="password" name="senha" id="senha" size="15"> <br> <br>
+        </fieldset>
+
+        <br> <br>
+
+        <fieldset>
+            <legend>Dados profissionais</legend>
+            <label for="cargo">Cargo: </label>
+            <input type="text" name="cargo" id="cargo" size="50"> <br> <br>
+            <label for="inicio">Data de início: </label>
+            <input type="date" name="inicio" id="inicio"> <br> <br>
+        </fieldset>
+
+        <br> <br>
+
+        <fieldset>
+            <legend>Dados escolares</legend>
+            <label for="cargo">Curso: </label>
+            <select name="curso">
+                <option value="blank"> </option>
+                <optgroup label="Exatas">
+                    <option value="ads">ADS</option>
+                    <option value="mec">Mecânica</option>
+                </optgroup>
+                <optgroup label="Humanas">
+                    <option value="hist">História</option>
+                    <option value="geo">Geografia</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <br> <br> 
+
+        <fieldset align="center">
+            <input type="submit" value="Enviar"> <br> <br>
+            <input type="reset" value="Limpar">
+        </fieldset>
+    </form>
+</body>
+
+</html>
