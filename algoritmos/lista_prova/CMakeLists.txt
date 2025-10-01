@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 4.0)
+project(lista_prova C)
+set(CMAKE_C_STANDARD 11)
+add_executable(imposto_renda imposto_renda.c)
+add_executable(cred_bancario cred_bancario.c)
+add_executable(notas_escolares notas_escolares.c)
