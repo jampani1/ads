@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main(void) {
     /* variavel para unidade de medida, C = 1, K = 2, F = 3 */
@@ -9,13 +10,13 @@ int main(void) {
     scanf("%c", &u);
     printf("Digite a temperatura que voce ta querendo mudar");
     scanf("%f", &temper);
-    if (u == 'C') {
+    if (toupper(u) == 'C') {
         printf("Sua unidade %c representa Celsius\n", u);
         tipoUn = 1;
-    } else if (u == 'K') {
+    } else if (toupper(u) == 'K') {
         printf("Sua unidade %c representa Kevin", u);
         tipoUn = 2;
-    } else if (u == 'F') {
+    } else if (toupper(u) == 'F') {
         printf("Sua unidade %c representa Fahrenheit", u);
         tipoUn = 3;
     }
@@ -29,6 +30,8 @@ int main(void) {
         case 3:
             printf("impressionante como em Celsius e mais legal ne %.2f C", (temper-32)*(5/9));
             printf("e em Kelvin entao que loucura pra fazer... %.2f K", (temper-32)*(5/9)+(273.15)); break;
+        default:
+            printf("Opcao invalida ne");
     }
 
     return 0;

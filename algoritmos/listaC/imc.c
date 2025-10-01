@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-    // Usar 'double' oferece mais precisão que 'float', é uma boa prática geral.
     double peso = 0.0, altura = 0.0, imc = 0.0;
 
     printf("Digite seu peso (kg): ");
-    // É uma boa prática verificar se o scanf conseguiu ler o valor com sucesso.
     if (scanf("%lf", &peso) != 1) {
         printf("Entrada inválida para o peso.\n");
         return 1;
@@ -17,20 +15,15 @@ int main(void) {
         return 1;
     }
 
-    // --- VALIDAÇÃO DOS DADOS ---
     if (peso <= 0 || altura <= 0) {
         printf("\nErro: O peso e a altura devem ser valores positivos.\n");
-        return 1; // Encerra o programa indicando um erro
+        return 1;
     }
-
-    // --- CÁLCULO ---
     imc = peso / (altura * altura);
 
-    // --- SAÍDA E CLASSIFICAÇÃO ---
     printf("\nSeu IMC é: %.2f\n", imc); // Mostra o valor calculado
     printf("Classificação: ");
 
-    // Lógica de classificação simplificada e corrigida
     if (imc < 18.5) {
         printf("Abaixo do peso\n");
     } else if (imc < 25.0) {
@@ -45,5 +38,5 @@ int main(void) {
         printf("Obesidade classe III\n");
     }
 
-    return 0; // Sucesso
+    return 0;
 }
