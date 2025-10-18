@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    function sorteio() {
+        a = parseInt(Math.random()*60);
+        b = parseInt(Math.random()*60);
+        c = parseInt(Math.random()*60);
+        d = parseInt(Math.random()*60);
+        e = parseInt(Math.random()*60);
+        f = parseInt(Math.random()*60);
+        return [a, b, c, d, e, f];
+    }
+    document.write("<b>SETE DA SORTE!</b> <br>")
+    var numerosSorteados = sorteio();
+    document.write(numerosSorteados + "<br>");
+    if(numerosSorteados == [2, 19, 28, 32, 45, 53]) // numeros hipoteticos
+        document.write("Parabéns! <br>");
+    else
+        document.write("Hipoteque sua casa para pagar a dívida.")
+</script>

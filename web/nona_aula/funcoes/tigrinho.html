@@ -1,0 +1,17 @@
+<script type="text/javascript">
+    function sorteio() {
+        a = parseInt(Math.random()*10);
+        return a;
+    }
+    document.write("<b>SETE DA SORTE!</b> <br>")
+    var a = sorteio();
+    document.write(a);
+    var b = sorteio();
+    document.write(b);
+    var c = sorteio();
+    document.write(c + "<br>");
+    if(a == 7 && b == 7 && c == 7)
+        document.write("Parabéns! <br>");
+    else
+        document.write("Hipoteque sua casa para pagar a dívida.")
+</script>
