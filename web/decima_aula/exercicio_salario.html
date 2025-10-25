@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="salario.css">
+    <title>Salario</title>
+</head>
+<body>
+    <div class="conteudo">
+        <label>Entre com o valor da hora</label>
+        <input type="text" id="valor_hora">
+        <label>Entre com a quantidade de horas</label>
+        <input type="text" id="qnt_hora">
+        <p id="mensagem"></p>
+        <button onclick="calcular()">CALCULAR</button>
+    </div>
+
+    <script type="text/javascript">
+        function calcular() {
+            var valor_h = document.getElementById("valor_hora").value;
+            var qnt_h = document.getElementById("qnt_hora").value;
+            var salario = 0;
+
+            salario = valor_h * qnt_h;
+
+            if (!isNaN(salario)) {
+                document.getElementById("mensagem").innerHTML = salario.toFixed(1);
+            } else {
+                document.getElementById("mensagem").innerHTML = "Algum valor inválido."
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div> <p>Login</p>
+        <label class="lab">Usuário</label>
+        <input type="text" name="usuario" class="input" placeholder="Digite seu usuário.">
+        <b id="resultado1"></b>
+        <br>
+        <label class="lab">Senha</label>
+        <input type="password" name="senha" class="input" placeholder="Digite sua senha.">
+        <b id="resultado2"></b>
+        <br>
+        <button class="btn" onclick="valida()">Entrar</button>
+    </div>
+
+    <script type="text/javascript">
+        function valida() {
+            var usuario = document.getElementsByName("usuario");
+            var senha = document.getElementsByName("senha");
+            
+            if(usuario[0].value == "") 
+                document.getElementById("resultado1").innerHTML = "Obrigatório";
+            if(senha[0].value == "")
+                document.getElementById("resultado2").innerHTML = "Obrigatório";
+
+            if ((usuario[0].value == "ADMIN") && (senha[0].value == "ADMIN")) { 
+                alert("Acesso liberado");
+                console.log("Acesso liberado");
+            } else { 
+                alert("Acesso negado");
+            } 
+        }
+    </script>
+</body>
+</html>
