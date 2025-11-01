@@ -1,0 +1,20 @@
+instalar o xampp - https://www.apachefriends.org/pt_br/download.html
+ativar o apache
+ativar o mysql
+
+criar a pasta phpexemplos em C:/xampp/htdocs/ ----- ou qualquer outro nome que quiser
+
+localhost ou 127.0.0.1 são equivalentes
+
+testar no navegador 
+localhost/dashboard
+
+client 
+html - css - js
+
+server
+php
+
+php executa do lado do servidor (geralmente um servidor web)
+
+xampp é um emulador de servidor web (via apache), emula DB (via mysql), emula envio de arquivos (via FileZilla)
