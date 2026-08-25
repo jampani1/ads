@@ -33,6 +33,9 @@ Agora, basta digitar soutv + Enter dentro de qualquer método para gerar a estru
 git clone https://github.com/jampani1/poo
 
 # limpa as credenciais de login salvas no Windows pelo Git
+usar esse - versao antiga que pegou no computador "protocol=https`nhost=github.com" | git credential-manager erase
+
+esse aqui nao funcionou - versao mais atualizada 
 git credential-manager reject https://github.com
 
 # remove as configurações globais de login que possam ter sido criadas
