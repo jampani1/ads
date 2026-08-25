@@ -28,3 +28,13 @@ json
 }
 
 Agora, basta digitar soutv + Enter dentro de qualquer método para gerar a estrutura de print inteligente automaticamente. 
+
+# para iniciar a aula
+git clone https://github.com/jampani1/poo
+
+# limpa as credenciais de login salvas no Windows pelo Git
+git credential-manager reject https://github.com
+
+# remove as configurações globais de login que possam ter sido criadas
+git config --global --unset-all credential.helper
+git config --system --unset-all credential.helper
