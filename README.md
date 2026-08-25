@@ -1,5 +1,7 @@
 ### Estudo de POO em Java com VS Code
 
+aulas e materiais do maromao https://maromopoo.netlify.app/
+
 ### config
 
 Instale o pacote oficial de ferramentas de Java diretamente no marketplace do VS Code: 
