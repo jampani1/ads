@@ -1,0 +1,83 @@
+nao podemos ter dois 
+
+<Text>Desenvolvimento mobile - react-native</Text>
+<Text>Desenvolvimento mobile - react-native</Text>
+
+para repetir o componente Text, precisamos agrupa-lo por View
+
+~~ View são como <div></div> no html vanilla
+
+<View>
+    <Text>Desenvolvimento mobile - react-native</Text>
+    <Text>Desenvolvimento mobile - react-native</Text>
+</View>
+
+mesmo serve para duas Views
+
+<View>
+    <Text>Desenvolvimento mobile - react-native</Text>
+</View>
+<View>
+    <Text>Desenvolvimento mobile - react-native</Text>
+</View>
+
+isso dará erro, precisamos:
+
+<View>
+    <View>
+        <Text>Desenvolvimento mobile - react-native</Text>
+    </View>
+    <View>
+        <Text>Desenvolvimento mobile - react-native</Text>
+    </View>
+</View>
+
+alguns componentes, como TextInput e Button, não precisam 'abrir e fechar'
+<TextInput
+    placeholder = 'qqr coisa'
+
+/>
+
+<Button
+    title = 'titulo / nome do botao'
+    onPress = 'funcao que vai ser ativada ao clicar'
+
+/>
+
+para onPress, fazemos a função ANTES do return
+
+function clicar() {
+    alert("E-mail enviado")
+}
+
+e usamos Alert em vez de console.log apenas para não precisar abrir o console
+
+<View>
+    <TouchableOpacity onPress={clicar}>
+      <Text>Enviar dados 1 - touchableopacity</Text>
+    </TouchableOpacity>
+</View>
+
+<View>
+  <Pressable onPress={clicar}>
+    <Text>Enviar dados 2 - pressable </Text>
+  </Pressable>
+</View>
+
+ambos precisam ser importados 
+TouchableOpacity é semelhante ao Button, mas precisa de estilização e estar em uma view também
+Pressable é semelhante ao TouchableOpacity
+
+Image também é autofechavel e tem algumas propriedades
+{{ }} nas propriedades ? regra mas não sei porque
+<Image
+  source={{
+    uri:''
+  }}
+  style={{
+    height: 100,
+    width: 200
+  }}
+/>
+
+assim como funções, variaveis são declaradas antes do return

@@ -1,0 +1,16 @@
+npm e node essenciais
+
+sdk biblioteca essencial para mobile
+
+
+via tradicional - emuladores
+via ágil - expo - plataforma de visualização do projeto
+
+fast reload - atualiza tudo
+hot reload - atualiza partes espeficicas da tela
+
+npx create-expo-app meuApp --template
+meuApp > repositorio/pasta
+selecionar o sdk54 (estavel LTS)
+
+npx expo install expo@54.0.0 > comando na pasta do projeto se der problema de versão com o expo go (android)
