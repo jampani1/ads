@@ -83,7 +83,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f2f6ff',
+    backgroundColor: '#fff7ed',
     justifyContent: 'space-between',
     paddingTop: 60,
     paddingBottom: 20,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#1d3557',
+    color: '#c2410c',
     textAlign: 'center',
   },
   conteudo: {
@@ -103,13 +103,13 @@ const styles = StyleSheet.create({
   },
   rotulo: {
     fontSize: 14,
-    color: '#1d3557',
+    color: '#9a3412',
     marginBottom: 4,
     marginTop: 12,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#a8b8d8',
+    borderColor: '#fdba74',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 10,
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   botao: {
-    backgroundColor: '#1d3557',
+    backgroundColor: '#ea580c',
     borderRadius: 8,
     paddingVertical: 14,
     marginTop: 24,
@@ -131,13 +131,13 @@ const styles = StyleSheet.create({
   resultado: {
     marginTop: 24,
     padding: 16,
-    backgroundColor: '#e0e9ff',
+    backgroundColor: '#ffedd5',
     borderRadius: 8,
     alignItems: 'center',
   },
   textoResultado: {
     fontSize: 16,
-    color: '#1d3557',
+    color: '#9a3412',
     fontWeight: '600',
   },
   rodape: {
@@ -145,6 +145,6 @@ const styles = StyleSheet.create({
   },
   textoRodape: {
     fontSize: 12,
-    color: '#6c7a94',
+    color: '#c2703d',
   },
 });
