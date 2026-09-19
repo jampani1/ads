@@ -1,0 +1,13 @@
+# Notas de sessão e documentos de referência (uso interno, não público)
+START.md
+ATA.docx
+
+# Rascunhos de sessão — trabalho em andamento, consolidado depois em docs/
+hoje*/
+
+# Configuração de editor
+.vscode/
+**/.vscode/
+
+# Exports pesados/interativos (gerar localmente quando precisar, não versionar)
+*.html
