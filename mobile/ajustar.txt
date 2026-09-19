@@ -1,0 +1,64 @@
+exemplos aula1909
+
+--- 1 ----
+import { Text, View, FlatList } from 'react-native';
+
+export default function App() {
+const nomes = ['João', 'Carlos', 'Emanuel']
+
+  return (
+    <View>
+      <FlatList
+        data = {nomes}
+        renderItem = {({item}) =><Text>{item}</Text>}
+      />
+    </View>
+  )
+}
+
+
+--- 2 -----
+import { Text, View, FlatList } from 'react-native';
+
+export default function App() {
+const dados = [
+  {id: '1', nome: 'João'},
+  {id: '2', nome: 'Carlos'},
+  {id: '3', nome: 'Emanuel'}
+];
+
+  return (
+    <View>
+      <FlatList
+        data = {dados}
+        keyExtractor = {(dados) =>dados.id}
+        renderItem = {({item}) =><Text>{item.nome
+        }</Text>}
+      />
+    </View>
+  )
+}
+
+
+---- 3---- 	
+//props > passar informações de um componente para o outro
+
+import { Text, View } from 'react-native';
+
+export default function App() {
+  function Pessoa(props) {
+    return(
+      <Text>
+        Pessoa: {props.nome}
+      </Text>
+    )
+
+  }
+
+  return (
+    <View>
+      <Pessoa nome="maria"/>
+    </View>
+  )
+}
+
