@@ -11,3 +11,7 @@ hoje*/
 
 # Exports pesados/interativos (gerar localmente quando precisar, não versionar)
 *.html
+
+# Ambiente virtual (criado 2026-09-25 para a atividade de regressão linear)
+.venv/
+venv/
