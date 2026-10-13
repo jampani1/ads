@@ -1,61 +1,76 @@
 # IC — Introdução aos Paradigmas de Machine Learning
 
-Iniciação Científica: estudo, implementação própria e avaliação de algoritmos
-clássicos de Machine Learning, comparando a implementação manual com a
-biblioteca de referência (scikit-learn) em cada bloco.
+Iniciação Científica: estudo, implementação própria e avaliação de algoritmos clássicos
+de Machine Learning. Em cada modelo, a matemática vem antes do `import`, a implementação
+é feita à mão e conferida contra a biblioteca de referência, e os resultados são
+explicados com gráficos.
 
-Imagens em [images/](images/).
+## Modelos
 
-## Regressão Linear
+| | Modelo | Estudo | Status |
+|---|---|---|---|
+| 1 | **Regressão Linear** | [Previsão de esgotamento de disco](regressao_linear/) | ✅ concluído |
+| 2 | Regressão Logística | — | em andamento |
+| 3 | k-NN | — | |
+| 4 | Árvore de Decisão | — | |
+| 5 | Random Forest | — | |
+| 6 | K-Means | — | |
+| 7 | Apriori | — | |
+| 8 | PCA | — | |
+| 9 | Q-Learning | — | |
+| 10 | Detecção de Anomalias | — | |
 
-**Capacity Planning: previsão de esgotamento de disco** —
-[`capacity_planning.ipynb`](capacity_planning.ipynb)
+---
 
-Regressão linear simples sobre 10.000 medições diárias de ocupação de disco
-([`monitoramento_disco_10k_v2.csv`](monitoramento_disco_10k_v2.csv)), para
-estimar quando o servidor atinge o limite operacional de 5.000 GB.
-Enunciado: [`Atividade_Regressao_Linear_Simples.pdf`](Atividade_Regressao_Linear_Simples.pdf).
+## Curiosidades — o que os dados mostraram e o enunciado não pedia
 
-Modelo ajustado por mínimos quadrados, implementado à mão e conferido contra
-`sklearn.linear_model.LinearRegression`:
+### Regressão Linear
 
-```
-ŷ = 127,65 + 0,448590·x        R² = 0,9700    RMSE = 228 GB
-```
+![Extrapolação com intervalos de confiança e de predição](regressao_linear/figuras/04_extrapolacao_bandas.png)
 
-**O resultado central** é a distância entre duas respostas à mesma pergunta:
+> **📉 861 dias ou 26 dias?**
+> Invertendo a reta, o disco atinge o limite de 5.000 GB em 861 dias. Mas a reta é a
+> ocupação *média*, e o disco não estoura na média: estoura num dia concreto. O dia em
+> que passa a haver 5% de chance de uma leitura estourar chega em **26 dias**. A mesma
+> pergunta, duas respostas, uma ordem de grandeza de diferença. E 9 dias da amostra já
+> tinham passado do limite.
 
-| Critério | Dia | Margem a partir do fim dos dados |
-|---|---|---|
-| A **tendência** atinge 5.000 GB | 10.861 | 861 dias |
-| O **percentil 95** atinge 5.000 GB | 10.026 | 26 dias |
+> **🧱 Um piso escondido nos dados.**
+> 101 dias valem *exatamente* 10,00 GB. Um valor contínuo não se repete 101 vezes por
+> acaso: é um corte do gerador, que evitou ocupação negativa no início da série. No
+> gráfico de resíduos ele aparece como uma reta descendente, porque ali $e = 10 - \hat y$.
 
-A resposta algébrica direta (inverter a equação) descreve a ocupação *média* e
-subestima o risco operacional em uma ordem de grandeza — nove dias da própria
-amostra já ultrapassaram o limite. A diferença entre intervalo de confiança e
-intervalo de predição é o que separa um exercício de uma recomendação de
-infraestrutura utilizável.
+> **🎯 R² = 0,97 e erro de 228 GB, ao mesmo tempo.**
+> Não é contradição. O R² mede quanto da variação a reta explica; como o disco sobe
+> 4.500 GB ao longo da série, os 3% que sobram ainda são ±228 GB por dia. "1 − R²" não é
+> margem de erro.
 
-![Extrapolação com bandas de confiança e predição](images/04_extrapolacao_bandas.png)
+> **🔢 Estatística que não precisa de dados.**
+> O desvio padrão da coluna `dia` (2.886,8957) sai só da fórmula $\sqrt{(n^2-1)/12}$,
+> sem olhar o arquivo, e bate nas 12 casas. É a prova de que `dia` é um índice, não uma
+> medição.
 
-Dois achados fora do enunciado:
+> **👀 Parecia padrão, não era.**
+> A média móvel dos resíduos faz ondas de até ±45 GB que parecem ciclos. Medindo:
+> Durbin-Watson = 2,03, e a média móvel oscila 16,09 GB contra 16,10 GB esperados para
+> ruído puro. Não há autocorrelação; só o número separou "parece" de "é".
 
-- **Censura nos dados** — 101 registros travados em exatamente 10,00 GB
-  (dias 14 a 1.102), que aparecem no gráfico de resíduos como uma reta
-  descendente, já que `e = 10 − ŷ`. Análise de sensibilidade: excluir a região
-  altera `β̂₁` em 0,21%.
-- **Validação preditiva** — nos dias 9.501 a 10.000, a taxa de estouro prevista
-  pelo modelo foi 1,76% contra 1,80% observada.
+> **🧮 Duas contas, o mesmo resultado até a 10ª casa.**
+> As fórmulas $S_{xy}/S_{xx}$ e a forma matricial $C^TC\beta = C^Ty$ vista em aula dão a
+> mesma reta. Na forma matricial, a matriz é 2×2 com 4 pontos ou com 10.000; mas o número
+> de condição dela sobe de 72 para 130 milhões, e é por isso que bibliotecas evitam
+> montar $C^TC$.
 
-Diagnóstico completo de resíduos (homocedasticidade, normalidade, ausência de
-curvatura) e comparação com regressão polinomial de graus 2 e 3 estão no
-notebook. Figuras em [`images/`](images/).
+---
 
-**Limitação assumida:** a autocorrelação dos resíduos não foi testada. Séries de
-monitoramento costumam ter dias correlacionados, o que tornaria os intervalos
-otimistas — Durbin-Watson é o próximo passo natural.
+## Como cada modelo é estudado
 
-
-## Regressão Logística
-
-_(em andamento)_
+1. **Matemática antes do código.** A derivação vem primeiro, em comentário no topo do
+   arquivo.
+2. **Todo ponto importante vira gráfico.**
+3. **Exemplos replicáveis.** Semente fixa e dados versionados junto do código.
+4. **Na mão vs. biblioteca.** Implementação própria, conferida contra a referência
+   (NumPy, scikit-learn).
+5. **Verificação por identidade, não por valor esperado.** Cada resultado é conferido
+   contra uma forma matematicamente equivalente: se a reta passa pelo centro de massa,
+   se $SQT = SQR + SQE$, se $R^2 = r^2$.
