@@ -67,9 +67,9 @@ Consequência: média e desvio padrão de `dia` não dizem nada sobre o servidor
 uma sequência $1, 2, \dots, n$ eles saem só de $n$, e a variância populacional tem
 forma fechada:
 
-$$
+```math
 \mathrm{Var}_{pop}(1..n) = \frac{(n+1)(2n+1)}{6} - \frac{(n+1)^2}{4} = \frac{n^2 - 1}{12}
-$$
+```
 
 ```text
 === Checkpoint 1 — desvio padrão de `dia` ===
@@ -143,11 +143,11 @@ em número.
 Minimizando o erro acumulado $E(\beta_0, \beta_1) = \sum (y_i - \beta_0 - \beta_1 x_i)^2$,
 as derivadas parciais iguais a zero dão as **equações normais**, cuja solução é:
 
-$$
+```math
 \hat\beta_1 = \frac{S_{xy}}{S_{xx}} = \frac{\sum (x_i - \bar x)(y_i - \bar y)}{\sum (x_i - \bar x)^2}
 \qquad
 \hat\beta_0 = \bar y - \hat\beta_1 \bar x
-$$
+```
 
 ```python
 def calcular_sxx(x):
@@ -172,9 +172,9 @@ O **chapéu** marca *estimativa*: $\beta_1$ é a inclinação verdadeira do proc
 ninguém conhece; $\hat\beta_1$ é o que esta amostra permite estimar. E $\hat y$ é o
 valor previsto pelo modelo, em oposição ao $y$ observado.
 
-$$
+```math
 \boxed{\hat y = 127{,}65 + 0{,}448590 \cdot x}
-$$
+```
 
 ### Verificações
 
@@ -238,23 +238,23 @@ caminho da Etapa 2.
 
 As $n$ equações $\beta_1 x_i + \beta_2 = y_i$ viram um sistema $C\beta = y$:
 
-$$
+```math
 \underbrace{\begin{bmatrix} x_1 & 1 \\ x_2 & 1 \\ \vdots & \vdots \\ x_n & 1 \end{bmatrix}}_{C_{n\times 2}}
 \underbrace{\begin{bmatrix} \beta_1 \\ \beta_2 \end{bmatrix}}_{\beta}
 =
 \underbrace{\begin{bmatrix} y_1 \\ \vdots \\ y_n \end{bmatrix}}_{y}
-$$
+```
 
 São 10.000 equações e 2 incógnitas, sem solução exata. Multiplicando os dois lados por
 $C^T$:
 
-$$
+```math
 \underbrace{C^T C}_{A}\,\beta = \underbrace{C^T y}_{b}
 \qquad
 A = \begin{bmatrix} \sum x_i^2 & \sum x_i \\ \sum x_i & n \end{bmatrix}
 \qquad
 b = \begin{bmatrix} \sum x_i y_i \\ \sum y_i \end{bmatrix}
-$$
+```
 
 ```python
 def ajustar_matricial(x, y):
@@ -290,11 +290,11 @@ sem montar $C^TC$.
 
 ### Decomposição da variância
 
-$$
+```math
 \underbrace{\sum (y_i - \bar y)^2}_{SQT}
 = \underbrace{\sum (\hat y_i - \bar y)^2}_{SQR}
 + \underbrace{\sum (y_i - \hat y_i)^2}_{SQE}
-$$
+```
 
 A identidade só vale porque o termo cruzado $2\sum(\hat y_i - \bar y)\,e_i$ é zero, e
 ele é zero por causa das equações normais da Etapa 2. Ou seja: o $R^2$ só tem essa
@@ -370,9 +370,9 @@ Séries temporais costumam ter dias correlacionados: um dia acima da reta tende 
 seguido de outro acima. Se fosse o caso, os 10.000 dias valeriam menos que 10.000
 informações independentes, e os intervalos da Etapa 4 sairiam otimistas.
 
-$$
+```math
 DW = \frac{\sum (e_i - e_{i-1})^2}{\sum e_i^2} \approx 2(1 - \rho_1)
-$$
+```
 
 ```text
 Durbin-Watson                 = 2.027   (2 = nenhuma autocorrelação)
@@ -390,9 +390,9 @@ separou "parece" de "é".
 
 ### A resposta que o enunciado pede
 
-$$
+```math
 \hat\beta_0 + \hat\beta_1 x^* = 5000 \quad\Longrightarrow\quad x^* = \frac{5000 - \hat\beta_0}{\hat\beta_1}
-$$
+```
 
 ```text
 Dia em que a TENDÊNCIA atinge 5000 GB:  x* = 10,861.5
@@ -405,11 +405,11 @@ $x^*$ é o dia em que a **média** prevista cruza 5.000 GB. O disco não enche n
 enche num dia concreto, com o ruído daquele dia. São dois intervalos diferentes, e a
 diferença é um "1" dentro da raiz:
 
-$$
+```math
 \text{confiança (a média):}\quad \hat y_0 \pm t\,s\sqrt{\frac{1}{n} + \frac{(x_0 - \bar x)^2}{S_{xx}}}
 \qquad
 \text{predição (um dia):}\quad \hat y_0 \pm t\,s\sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar x)^2}{S_{xx}}}
-$$
+```
 
 ```text
 Em x₀ = x* = 10,861:
@@ -430,9 +430,9 @@ estará (±447 GB). E é um dia específico que estoura o disco.
 O critério de capacity planning é o percentil, não a média: procura-se o dia em que há
 5% de chance de uma leitura passar do limite.
 
-$$
+```math
 \hat\beta_0 + \hat\beta_1 x + z_{0,95}\, s = 5000 \qquad (z_{0,95} \approx 1{,}645)
-$$
+```
 
 ```text
 Dia em que a TENDÊNCIA atinge 5000 GB     : 10,861

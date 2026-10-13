@@ -60,17 +60,3 @@ explicados com gráficos.
 > mesma reta. Na forma matricial, a matriz é 2×2 com 4 pontos ou com 10.000; mas o número
 > de condição dela sobe de 72 para 130 milhões, e é por isso que bibliotecas evitam
 > montar $C^TC$.
-
----
-
-## Como cada modelo é estudado
-
-1. **Matemática antes do código.** A derivação vem primeiro, em comentário no topo do
-   arquivo.
-2. **Todo ponto importante vira gráfico.**
-3. **Exemplos replicáveis.** Semente fixa e dados versionados junto do código.
-4. **Na mão vs. biblioteca.** Implementação própria, conferida contra a referência
-   (NumPy, scikit-learn).
-5. **Verificação por identidade, não por valor esperado.** Cada resultado é conferido
-   contra uma forma matematicamente equivalente: se a reta passa pelo centro de massa,
-   se $SQT = SQR + SQE$, se $R^2 = r^2$.
