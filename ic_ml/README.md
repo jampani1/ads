@@ -12,7 +12,7 @@ explicados com gráficos.
 | | Modelo | Estudo | Status |
 |---|---|---|---|
 | 1 | **Regressão Linear** | [Previsão de esgotamento de disco](regressao_linear/) | ✅ concluído |
-| 2 | Regressão Logística | — | em andamento |
+| 2 | **Regressão Logística** | [Previsão de entrega no prazo](regressao_logistica/) | ✅ concluído |
 | 3 | k-NN | — | |
 | 4 | Árvore de Decisão | — | |
 | 5 | Random Forest | — | |
@@ -62,3 +62,35 @@ explicados com gráficos.
 > mesma reta. Na forma matricial, a matriz é 2×2 com 4 pontos ou com 10.000; mas o número
 > de condição dela sobe de 72 para 130 milhões, e é por isso que bibliotecas evitam
 > montar $C^TC$.
+
+### Regressão Logística
+
+![Acurácia em função do limiar](regressao_logistica/figuras/03_acuracia_por_limiar.png)
+
+> **🪜 O limiar ótimo é mais estreito que a grade.**
+> A acurácia é uma escada: só muda quando o limiar cruza a probabilidade de algum pedido. O
+> degrau que maximiza a acurácia tem 0,0046 de largura, entre 0,5037 e 0,5082. Uma busca de
+> 0,01 em 0,01 passa por cima dele e para em 35 acertos, em vez de 36.
+
+> **🔢 O número do pedido acerta mais que o modelo.**
+> Ordenando por `PED-001` a `PED-042`, o resultado vem em blocos (15 atrasos, 3 acertos,
+> 4 atrasos, 20 acertos), e um corte no número do pedido acerta 39 de 42, contra 36 da
+> antecedência. É um vazamento: carrega a resposta sem explicar nada, e por isso fica de fora.
+
+> **📏 85,7% na amostra, 81% fora dela.**
+> O limiar foi escolhido olhando os mesmos 42 pedidos em que foi avaliado. Refazendo tudo sem
+> um pedido de cada vez (*leave-one-out*), o limiar otimizado acerta 34, exatamente o mesmo que o
+> 0,5 padrão. O ganho de um pedido era ajuste à amostra.
+
+> **🔁 A logística começa na reta.**
+> Não há fórmula fechada; o ajuste é iterativo. Pelo método de Newton, cada passo resolve o
+> sistema $C^TC\beta = C^Ty$ da regressão linear com pesos, e o primeiro passo é exatamente
+> quatro vezes a reta de mínimos quadrados ajustada em $y - 1/2$.
+
+> **⚠️ O padrão do scikit-learn não é o do livro.**
+> `LogisticRegression()` aplica regularização sem avisar e devolve coeficientes diferentes da
+> máxima verossimilhança. Para reproduzir a conta feita à mão, é preciso `C=np.inf`.
+
+> **🎯 Um pedido move o coeficiente em 35%.**
+> Um único atraso com 22,81 h de antecedência, para o qual o modelo dava 95% de chance de
+> chegar no prazo, segura a inclinação. Sem ele, $\hat\beta_1$ vai de 0,261 para 0,354.
