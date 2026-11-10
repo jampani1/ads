@@ -1,4 +1,6 @@
 # IC — Introdução aos Paradigmas de Machine Learning
+## Professor Marcio Rodrigues Sabino
+### Aluno Maurício Jampani de Souza
 
 Iniciação Científica: estudo, implementação própria e avaliação de algoritmos clássicos
 de Machine Learning. Em cada modelo, a matemática vem antes do `import`, a implementação
